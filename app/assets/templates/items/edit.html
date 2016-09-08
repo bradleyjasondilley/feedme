@@ -1,0 +1,28 @@
+<h1>Edit</h1>
+<form action="/updateItem" method="POST">
+    <fieldset>
+      <p><label for="Name">Category Name:</label> {{item.catname}}</p>
+      <p><label for="Name">Name: </label> {{item.name}}</p>
+      <p><label for="Name">Purchase Date:</label> {{item.pdate}}</p>
+      <p><label for="Name">Exp Date: </label><input type="date" name="edate" value="{{item.edate}}"></p>
+      <p>
+        <label for="qty">Qty: </label>
+        <select class="" name="qty">
+          <option value="Full">full</option>
+          <option value="Half">half</option>
+          <option value="quater">1/4</option>
+          <option value="grams">grams</option>
+        </select>
+      </p>
+      <p>
+        <label for="location">Location: </label>
+        <select class="" name="location">
+          <option value="fridge">Fridge</option>
+          <option value="freezer">Freezer</option>
+          <option value="cupboard">cupboard</option>
+        </select>
+      </p>
+        <input type="hidden" name="id" value="{{item._id}}">
+       <button type="submit">Submit</button>
+    </fieldset>
+  </form>

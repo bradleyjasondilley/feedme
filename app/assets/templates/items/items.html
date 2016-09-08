@@ -1,0 +1,17 @@
+<ul class="categories">
+   <li class="categoryTab" ng-repeat="(key,value) in cats">{{key}}</li>  
+</ul>
+
+
+
+<ul>
+    <li class="card {{item.exp}}" ng-repeat="item in items | orderBy:'edate'">
+    <span>Name: {{item.name}}</span>
+    <span>Category: {{item.catname}}</span>
+    <span>Purchase Date: {{item.pdate}}</span>
+    <span>Expiry Date: {{item.edate}}</span>
+    <span>Has Expired: {{item.exp}}</span>
+    <span>Location: {{item.location}}</span>
+    <span class="edit"><a ng-href="#/editItem/{{item._id}}"><i class="fa fa-cog" aria-hidden="true"></i></a></span>
+    </li>
+</ul>

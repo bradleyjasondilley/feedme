@@ -2,19 +2,10 @@ angular.module('FeedMe').controller('ItemController', function (Item, Cat, $scop
   $scope.items;
   $scope.cats;
 
-  Item.getItems()
-    .then(function (response) {
-      var items = response.data;
-      console.log('items' + items);
-      angular.forEach(items, function (item) {
-          item.exp = $scope.checkExpiry(item.edate);
-      });
-      $scope.items = items;
-    }, function (error) {
-        $scope.status = 'Unable to load customer data: ' + error.message;
-    });
-
-
+  var getItems = Item.getItems();
+    getItems.then(function(result) {  
+    $scope.items = result;
+  });
 
   var getCats = Cat.getCats();
     getCats.then(function(result) {  
